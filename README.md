@@ -57,3 +57,8 @@ in Python, C++ and Java.
 1. ```pip install caer```
 2. This is the package to help speed up the
    workflow with a set of utility functions.
+
+## Basics
+### Reading Images & Video
+1. ```cv.imready(<file_path>)``` read the image file
+2. ```cv.imshow(<display_window_name>,<img_file_variable>)``` display the image
