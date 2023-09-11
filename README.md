@@ -59,6 +59,17 @@ in Python, C++ and Java.
    workflow with a set of utility functions.
 
 ## Basics
+
 ### Reading Images & Video
-1. ```cv.imready(<file_path>)``` read the image file
-2. ```cv.imshow(<display_window_name>,<img_file_variable>)``` display the image
+
+1. Reading images
+
+* import the library ```import cv2 as cv```
+* read the image
+  file ```cv.imready(<file_path>)```
+* display the
+  image ```cv.imshow(<display_window_name>,<img_file_variable>)```
+* OpenCV does not have the in-built way
+  for ```cv.imshow()``` to deal with the image
+  that far bigger than the screen. But there are
+  other ways to mitigate the issue.
