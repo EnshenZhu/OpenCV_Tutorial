@@ -84,3 +84,28 @@ width**.
   the height.
 
 ### Drawing Shapes & Putting Text
+
+1. Paint color
+2. Draw rectangles
+3. Draw circles
+4. Draw lines
+5. Add texts
+
+### Five Essential Functions in OpenCV
+
+1. Grayscale the image *(you will only see the **color intensity** instead of BGR colors)*
+2. Blur the image *(remove the **noise** in the image; **noise** means some elements in the image caused by the bad
+   lighting or camera sensor issues)*
+3. Edge cascade *(Find the **edge** in the image)*
+4. Dilate and erode the image (via structuring elements)
+5. Resize and cript the image
+
+### Image Transformations
+
+1. Translation *(shift the image along the x and y axis)*
+2. Rotation *(rotate the image by some angle)*
+3. Resize
+4. Flip
+5. Crop
+
+### Contour Detection
