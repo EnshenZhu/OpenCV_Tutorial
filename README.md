@@ -45,31 +45,42 @@ in Python, C++ and Java.
 
 1. Open the terminal
 2. ```pip install opencv-contrib-python```
-3. This library includes the **main model** and
-   the **contribution module** of the OpenCV
-   library
-4. The OpenCV library installation will also
-   install the **numpy package** (for scientific
-   computing).
+3. This library includes the **main model** and the **contribution module** of the OpenCV library
+4. The OpenCV library installation will also install the **numpy package** (for scientific computing).
 
 ### Caer
 
 1. ```pip install caer```
-2. This is the package to help speed up the
-   workflow with a set of utility functions.
+2. This is the package to help speed up the workflow with a set of utility functions.
 
 ## Basics
 
 ### Reading Images & Video
 
-1. Reading images
+import the library ```import cv2 as cv```
 
-* import the library ```import cv2 as cv```
-* read the image
-  file ```cv.imready(<file_path>)```
-* display the
-  image ```cv.imshow(<display_window_name>,<img_file_variable>)```
-* OpenCV does not have the in-built way
-  for ```cv.imshow()``` to deal with the image
-  that far bigger than the screen. But there are
-  other ways to mitigate the issue.
+1. Read images
+    * read the image file ```cv.imready(<file_path>)```
+    * display the image ```cv.imshow(<display_window_name>,<img_file_variable>)```
+    * OpenCV does not have the in-built way for ```cv.imshow()``` to deal with the image that far bigger than the
+      screen. But there are other ways to mitigate the issue.
+
+2. Read videos
+    * read the video ```cv.VideoCapture([camera_idx],<file_path>)```
+    * It uses a while loop to read the video frame by frame.
+    * ```(-215:Assertion failed)``` This error means that the OpenCV cannot find any more frames after finish reading
+      the entire video. (In general, the OpenCV cannot find the image or the video frame)
+
+### Resize & Rescale
+
+We resize or rescale image or video files to **prevent computation strain**. Large media files tend to store a lot of
+information in it and displaying it takes up a lot of processing needs for the computer. So resizing and rescaling can
+get rid of some of that information. Rescaling video implies modifying its height and width to **a particular height and
+width**.
+
+* This can resize images, videos and live
+  videos ```cv.resize(<frame variable>, <dimensions[tuple]>, interpolation=cv.INTER_AREA)```.
+* This can only resize live videos ```cv.set(<propid>,<scale>)```. For the ```propid```, 3 is for the width and 4 is for
+  the height.
+
+### Drawing Shapes & Putting Text
