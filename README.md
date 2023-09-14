@@ -112,3 +112,17 @@ width**.
 
 Contours are the boundary of objects. --> The line or curve that joins the continues points along the boundary of an
 object. *(In mathematical scopt, contours are **NOT** same to the edges.)*
+
+```contours, hierarchies = cv.findContours(canny, mode=cv.RETR_LIST, method=cv.CHAIN_APPROX_NONE)```
+
+1. ```contours```--> list of all the coordinates of contours that are found in the image.
+2. ```hierarchies```--> hierarchical representation of contours.
+3. ```mode params```:
+   * ```RETR_LIST``` returns all the contours that are found in the image
+   * ```RETR_EXTERNAL``` only returns the external contour of the image
+   * ```RETR_TREE``` returns all the hieratical contours in the system
+4. ```method params```  --> how we want to approximate the contour
+   * ```CHAIN_APPROX_NONE``` --> does nothing, just return the all the contours
+   * ```CHAIN_APPROX_SIMPLE``` --> compress all contours into two end points only
+
+You can visualize the image contour in the OpenCV by exactly drawing the contour over the image: ```cd ./5_contour_dectection./c ```

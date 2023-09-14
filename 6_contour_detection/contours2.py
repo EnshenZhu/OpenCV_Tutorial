@@ -8,14 +8,12 @@ cv.imshow('Silencer', img)
 gray = cv.cvtColor(img, code=cv.COLOR_BGR2GRAY)
 cv.imshow("Gray", gray)
 
-# blur = cv.GaussianBlur(img, ksize=(5, 5), sigmaX=cv.BORDER_DEFAULT)
-# cv.imshow("Blur", blur)
+ret, thresh = cv.threshold(gray, thresh=125, maxval=255, type=cv.THRESH_BINARY)
+# if the image value is equal ot below 125, set it into black --> 0
+# if the image value is over 125, set it into white --> 255
+cv.imshow("Threshold", thresh)
 
-# get the contour of the image via the Canny edge detector
-canny = cv.Canny(gray, threshold1=125, threshold2=175)
-cv.imshow("Canny Edges", canny)
-
-contours, hierarchies = cv.findContours(canny, mode=cv.RETR_LIST, method=cv.CHAIN_APPROX_NONE)
+contours, hierarchies = cv.findContours(thresh, mode=cv.RETR_LIST, method=cv.CHAIN_APPROX_NONE)
 # findContours function looks at the structure of the element or the edges we found in the image, and return the
 # contours and the hierarchies.
 
