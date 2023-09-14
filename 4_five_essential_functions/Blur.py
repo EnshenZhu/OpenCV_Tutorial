@@ -9,8 +9,7 @@ blur = cv.GaussianBlur(img, ksize=(3, 3), sigmaX=cv.BORDER_DEFAULT)
 cv.imshow('Blur', blur)
 
 # increasing the blur
-img = cv.imread('../Photos/dota_silencer.jpg')
-blur = cv.GaussianBlur(img, ksize=(7, 7), sigmaX=cv.BORDER_DEFAULT)
-cv.imshow('Increased Blur', blur)
+increaded_blur = cv.GaussianBlur(img, ksize=(7, 7), sigmaX=cv.BORDER_DEFAULT)
+cv.imshow('Increased Blur', increaded_blur)
 
 cv.waitKey(0)

@@ -109,3 +109,6 @@ width**.
 5. Crop
 
 ### Contour Detection
+
+Contours are the boundary of objects. --> The line or curve that joins the continues points along the boundary of an
+object. *(In mathematical scopt, contours are **NOT** same to the edges.)*

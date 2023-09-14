@@ -9,11 +9,11 @@ cv.imshow('Silencer', img)
 canny = cv.Canny(img, threshold1=125, threshold2=175)
 cv.imshow('Canny', canny)
 
-dilate = cv.dilate(img, kernel=(7, 7), iterations=5)
+dilate = cv.dilate(canny, kernel=(7, 7), iterations=3)
 cv.imshow('Dilated', dilate)
 
 # Erode dilated image to get back to the structured elements
-eroded = cv.erode(dilate, kernel=(7, 7), iterations=5)
+eroded = cv.erode(dilate, kernel=(7, 7), iterations=3)
 cv.imshow('Eroded', eroded)
 
 cv.waitKey(0)
