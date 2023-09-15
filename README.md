@@ -118,11 +118,16 @@ object. *(In mathematical scopt, contours are **NOT** same to the edges.)*
 1. ```contours```--> list of all the coordinates of contours that are found in the image.
 2. ```hierarchies```--> hierarchical representation of contours.
 3. ```mode params```:
-   * ```RETR_LIST``` returns all the contours that are found in the image
-   * ```RETR_EXTERNAL``` only returns the external contour of the image
-   * ```RETR_TREE``` returns all the hieratical contours in the system
+    * ```RETR_LIST``` returns all the contours that are found in the image
+    * ```RETR_EXTERNAL``` only returns the external contour of the image
+    * ```RETR_TREE``` returns all the hieratical contours in the system
 4. ```method params```  --> how we want to approximate the contour
-   * ```CHAIN_APPROX_NONE``` --> does nothing, just return the all the contours
-   * ```CHAIN_APPROX_SIMPLE``` --> compress all contours into two end points only
+    * ```CHAIN_APPROX_NONE``` --> does nothing, just return the all the contours
+    * ```CHAIN_APPROX_SIMPLE``` --> compress all contours into two end points only
 
-You can visualize the image contour in the OpenCV by exactly drawing the contour over the image: ```cd ./5_contour_dectection./c ```
+You can visualize the image contour in the OpenCV *by exactly drawing the contour over the
+image:* ```cd ./5_contour_dectection./contour3.py ```
+
+**RECALL:** *In the OpenCV color system, the order of color is BGR (Blue-Green-Red)*
+
+Try to distinguish the difference to the Canny.
