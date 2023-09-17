@@ -1,6 +1,9 @@
 import cv2 as cv
 import numpy as np
 
+"""This script is an upgrade from the contour3.py by replacing the findContour(<thresh>...) into findContour(
+<canny>...)"""
+
 img = cv.imread('../Photos/dota_silencer.jpg')
 cv.imshow('Silencer', img)
 
@@ -23,7 +26,7 @@ ret, thresh = cv.threshold(gray, thresh=125, maxval=255, type=cv.THRESH_BINARY)
 # if the image value is over 125, set it into white --> 255
 cv.imshow("Threshold", thresh)
 
-contours, hierarchies = cv.findContours(thresh, mode=cv.RETR_LIST, method=cv.CHAIN_APPROX_NONE)
+contours, hierarchies = cv.findContours(canny, mode=cv.RETR_LIST, method=cv.CHAIN_APPROX_NONE)
 # findContours function looks at the structure of the element or the edges we found in the image, and return the
 # contours and the hierarchies.
 

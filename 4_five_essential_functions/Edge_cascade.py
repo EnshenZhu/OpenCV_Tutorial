@@ -5,6 +5,8 @@ cv.imshow('Silencer', img)
 
 """3. Edge Cascade (by Canny edge detection)"""
 canny = cv.Canny(img, threshold1=125, threshold2=175)
+# Any edges with intensity gradient more than maxVal are sure to be edges and those below minVal are sure to be
+# non-edges
 cv.imshow('Canny', canny)
 
 # We can reduce the edges by blurring the image
