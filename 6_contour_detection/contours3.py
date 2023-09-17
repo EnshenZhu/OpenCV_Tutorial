@@ -27,12 +27,12 @@ contours, hierarchies = cv.findContours(thresh, mode=cv.RETR_LIST, method=cv.CHA
 # findContours function looks at the structure of the element or the edges we found in the image, and return the
 # contours and the hierarchies.
 
+print(f'{len(contours)} contour(s) found')
+
 """Draw the contour on the blank image"""
 cv.drawContours(blank, contours, contourIdx=-1, color=(0, 0, 255), thickness=1)
 # contourIdx --> how many contour we want in the image, (specify -1 to draw all contours)
 
 cv.imshow("Contour Drawn", blank)
-
-print(f'{len(contours)} contour(s) found')
 
 cv.waitKey(0)

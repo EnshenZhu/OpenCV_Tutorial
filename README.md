@@ -130,4 +130,26 @@ image:* ```cd ./5_contour_dectection./contour3.py ```
 
 **RECALL:** *In the OpenCV color system, the order of color is BGR (Blue-Green-Red)*
 
-Try to distinguish the difference to the Canny.
+Try to distinguish the difference to the Canny. ```cd ./5_contour_dectection./contour4.py```
+
+When looking or contours, it is recommended to use the Canny method first, and then try to find the contour by using
+that, rather than using the threshold firstly. Because the simple thresholding has its disadvantages because we just
+pass a single(one) value and try to binarize the image using this threshold value.
+
+## Advance
+
+### Color Space
+
+This section is going to talk about how to switch the color space via the OpenCV. **Color Space** is a space of colors,
+a system of representing an array of pixel colors (e.g. RGB, Grayscale, HSV)
+
+1. ```spaces1.py``` Convert BGR to Grayscale.
+2. ```spaces2.py``` Convert BGR to HSV *(hue saturation value)*. It is based on how human see and think of the color. *(
+   For more information, check https://en.wikipedia.org/wiki/HSL_and_HSV)*
+3. ```spaces3.py``` Covert BGR to LAB (L\*a\*b) *(For more information,
+   check https://www.mathworks.com/discovery/lab-color.html#:~:text=Lab%20color%20space%20is%20a,colors%20outside%20of%20human%20perception)*
+4. OpenCV read the image in the **BGR** color format. Outside the OpenCV, the color is not coded in the BGR. It may be
+   coded as **RGB**. Check ```spaces4.py``` as an example.
+5. ```spaces5.py``` OpenCV has its own way to convert the BGR image into the RGB.
+6. **RECALL:** You cannot directly convert grayscale to HSV, Instead, you need to convert the grayscale firstly to BGR,
+   then from BGR to HSV. ```space6.py``` shows an example of the reverse conversion to the BGR format.
