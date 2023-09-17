@@ -115,14 +115,14 @@ object. *(In mathematical scopt, contours are **NOT** same to the edges.)*
 
 ```contours, hierarchies = cv.findContours(canny, mode=cv.RETR_LIST, method=cv.CHAIN_APPROX_NONE)```
 
-1. ```contours```--> list of all the coordinates of contours that are found in the image.
+1. ```contours```--> list of all the contour coordinates that are found in the image.
 2. ```hierarchies```--> hierarchical representation of contours.
 3. ```mode params```:
     * ```RETR_LIST``` returns all the contours that are found in the image
     * ```RETR_EXTERNAL``` only returns the external contour of the image
     * ```RETR_TREE``` returns all the hieratical contours in the system
 4. ```method params```  --> how we want to approximate the contour
-    * ```CHAIN_APPROX_NONE``` --> does nothing, just return the all the contours
+    * ```CHAIN_APPROX_NONE``` --> does nothing, just return all the contours
     * ```CHAIN_APPROX_SIMPLE``` --> compress all contours into two end points only
 
 You can visualize the image contour in the OpenCV *by exactly drawing the contour over the
@@ -136,7 +136,7 @@ When looking or contours, it is recommended to use the Canny method first, and t
 that, rather than using the threshold firstly. Because the simple thresholding has its disadvantages because we just
 pass a single(one) value and try to binarize the image using this threshold value.
 
-## Advance
+## Advanced
 
 ### Color Space
 
@@ -153,3 +153,63 @@ a system of representing an array of pixel colors (e.g. RGB, Grayscale, HSV)
 5. ```spaces5.py``` OpenCV has its own way to convert the BGR image into the RGB.
 6. **RECALL:** You cannot directly convert grayscale to HSV, Instead, you need to convert the grayscale firstly to BGR,
    then from BGR to HSV. ```space6.py``` shows an example of the reverse conversion to the BGR format.
+
+### Color Channels
+
+We are going to talk about how to split and merge color channels in OpenCV.
+A color image is basically composed with three color channels: *Red, Green and Blue*.
+All colors are these three colors merged together.
+
+* By using the ```split``` method, we can split the image into the BGR color channels.
+* By using the ```merge``` method, we can merge different color channels into a colorful image.
+
+Check on ```splitmerge2.py``` how to display the original image for a specific color channel.
+
+### Blurring Techniques
+
+We are going to talk about the smoothing and blurring in the OpenCV.
+
+1. **Averaging**
+    * Define a kernel of window (a.k.a. 卷积核) over a specific portion of image.
+    * This windows will compute the intensity of the middle pixel (the true center) as the average of the surrounding
+      pixels intensities.
+    * The higher the kernel size is, the more blurring the image will be.
+2. **Gaussian Blur**
+    * It defines the kernel of a window similar to the **averaging** method.
+    * Each pixel in the window is given with a particular weight.
+      The average of the weights' product gives the value of
+      the true center.
+    * The Gaussian Blur tends to have less blurring compare to the **averaging** method.
+    * The Gaussian Blur looks more natural than the averaging.
+3. **Median Blur**
+    * Instead of finding the average of surrounding pixels, it looks for the median of them.
+    * It is more effective to remove noises in the image, compared with the **average and Gaussian Blur**.
+    * Median Blur does not tend to set with a high kernel-size.
+4. **Bilateral**
+    * It is the most effective blurring and been used in a lot of advanced computer vision projects.
+    * Traditional blurring method blurs the image without looking whether it reduces the edges of the image or not. But
+      bilateral applies the blurring **but retains the edges in the image.**
+
+### Bitwise Operations
+
+There are four bitwise operators in OpenCV: **AND, OR, XOR, NOT**
+
+Bitwise operators operate in a binary manner. A pixel is turned off if it has a *zero* value, and is turned on if it has
+a value of *one*
+
+1. Bitwise AND
+    * Overlap two images with each other.
+    * Return the **intersection** of two images
+2. Bitwise OR
+    * Overlap two images with each other.
+    * Return the **intersection and non-intersection** of two images
+3. Bitwise XOR
+    * Overlap two images with each other.
+    * Return the **non-intersection** of two images
+    * *Bitwise OR - Bitwise XOR = Bitwise AND*
+    * *Bitwise OR - Bitwise AND = Bitwise XOR*
+4. Bitwise NOT
+    * Only takes one parameter
+    * Invert the pixel *(black <--> white)*
+
+### Masking
