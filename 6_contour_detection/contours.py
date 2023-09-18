@@ -11,7 +11,7 @@ cv.imshow("Gray", gray)
 # blur = cv.GaussianBlur(img, ksize=(5, 5), sigmaX=cv.BORDER_DEFAULT)
 # cv.imshow("Blur", blur)
 
-# get the contour of the image via the Canny edge detector
+# get the contour of the image via the Canny-edge detector
 canny = cv.Canny(gray, threshold1=125, threshold2=175)
 cv.imshow("Canny Edges", canny)
 

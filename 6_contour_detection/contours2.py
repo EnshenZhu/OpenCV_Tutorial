@@ -9,7 +9,7 @@ gray = cv.cvtColor(img, code=cv.COLOR_BGR2GRAY)
 cv.imshow("Gray", gray)
 
 ret, thresh = cv.threshold(gray, thresh=125, maxval=255, type=cv.THRESH_BINARY)
-# if the image value is equal ot below 125, set it into black --> 0
+# if the image value is equal or below 125, set it into black --> 0
 # if the image value is over 125, set it into white --> 255
 cv.imshow("Threshold", thresh)
 

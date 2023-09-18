@@ -98,11 +98,11 @@ width**.
    lighting or camera sensor issues)*
 3. Edge cascade *(Find the **edge** in the image)*
 4. Dilate and erode the image (via structuring elements)
-5. Resize and cript the image
+5. Resize and crop the image
 
 ### Image Transformations
 
-1. Translation *(shift the image along the x and y axis)*
+1. Translation *(shift the image along the x and y-axis)*
 2. Rotation *(rotate the image by some angle)*
 3. Resize
 4. Flip
@@ -110,7 +110,7 @@ width**.
 
 ### Contour Detection
 
-Contours are the boundary of objects. --> The line or curve that joins the continues points along the boundary of an
+Contours are the boundary of objects. --> The line or curve that joins the continued points along the boundary of an
 object. *(In mathematical scopt, contours are **NOT** same to the edges.)*
 
 ```contours, hierarchies = cv.findContours(canny, mode=cv.RETR_LIST, method=cv.CHAIN_APPROX_NONE)```
@@ -226,3 +226,44 @@ and remove all the rest in the image.*)
 *WARNING: The dimension of the mask must be the **same size** to the image.*
 
 ### Computing Histograms
+
+We use the image ```fengshen.jpg``` as the source image. <Img src="Photos/fengshen.jpg">
+
+Histogram allows you to visualize the distribution of pixel intensities in an image (whether it is a color or grayscale
+image). It will be in a graph or a plot that gives a high-level intuition of the pixel distribution in the image.
+
+#### Grayscale
+
+1. ```histogram_grayscale.py``` Compute the histogram for grayscale image. *(The histogram shows that there are around
+   3500 pixels has the intensity of 20 to 30)* <img src="./histogram_results/grayscale_histogram.png">
+2. ```histogram_grayscale2.py``` Change to another source image.
+3. ```histogram_grayscale3.py``` Create a circle mask and compute the histogram for grayscale image only on the mask
+   area. <img src="./histogram_results/grayscale_histogram_with_mask.png">
+
+#### Colors
+
+1. ```histogram_colors.py``` Compute the histogram for the color image. <img src="./histogram_results/colors_histogram.png">
+2. ```histogram_colors2.py``` Create a circle mask and compute the histogram for the color image only on the mask
+   area. <img src="./histogram_results/colors_histogram_with_mask.png">
+
+### Thresholding
+
+Thresholding is to binarize of the image. We want to take an image and convert it to a binary image. It is an image
+where pixels are either zero *(black)* or 255 *(white)*.
+An elementary example of thresholding would be to take an image and take some particular value *(thresholding value)*,
+and compare each pixel of the image to this threshold of value.
+
+* If the pixel intensity is less than the threshold value, we set that pixel intensity to zero.
+* If the pixel intensity is above the threshold value, we set that pixel intensity to 255.
+
+#### Simple Thresholding
+
+Manually set a threshold value.
+
+* Set the pixel intensity to zero if the initial pixel intensity is equal or below the
+  threshold value.
+* Set the pixel intensity to maxVal if the initial pixel intensity is above threshold value.
+
+#### Adaptive Thresholding
+
+Let the computer decide the thresholding value by itself, instead of manually setting the threshold value.
