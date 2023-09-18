@@ -148,7 +148,7 @@ a system of representing an array of pixel colors (e.g. RGB, Grayscale, HSV)
    For more information, check https://en.wikipedia.org/wiki/HSL_and_HSV)*
 3. ```spaces3.py``` Covert BGR to LAB (L\*a\*b) *(For more information,
    check https://www.mathworks.com/discovery/lab-color.html#:~:text=Lab%20color%20space%20is%20a,colors%20outside%20of%20human%20perception)*
-4. OpenCV read the image in the **BGR** color format. Outside the OpenCV, the color is not coded in the BGR. It may be
+4. OpenCV reads the image in the **BGR** color format. Outside the OpenCV, the color is not coded in the BGR. It may be
    coded as **RGB**. Check ```spaces4.py``` as an example.
 5. ```spaces5.py``` OpenCV has its own way to convert the BGR image into the RGB.
 6. **RECALL:** You cannot directly convert grayscale to HSV, Instead, you need to convert the grayscale firstly to BGR,
@@ -170,7 +170,7 @@ Check on ```splitmerge2.py``` how to display the original image for a specific c
 We are going to talk about the smoothing and blurring in the OpenCV.
 
 1. **Averaging**
-    * Define a kernel of window (a.k.a. 卷积核) over a specific portion of image.
+    * Define a kernel of window (a.k.a. 卷积核) over a specific portion of the image.
     * This windows will compute the intensity of the middle pixel (the true center) as the average of the surrounding
       pixels intensities.
     * The higher the kernel size is, the more blurring the image will be.
@@ -213,3 +213,16 @@ a value of *one*
     * Invert the pixel *(black <--> white)*
 
 ### Masking
+
+Using bitwise operation, we can perform masking in the OpenCV.
+Masking allows us to focus on certain parts of the image.
+(E.g., An image with people --> we would like to focus on the faces of people --> *we can mask people's faces
+and remove all the rest in the image.*)
+
+1. ```masking1.py``` mask the image with a circle.
+2. ```masking2.py``` mask the image with a rectangle.
+3. ```masking3.py``` mask the image with a weird shape (by overlapping a circle and a rectangle).
+
+*WARNING: The dimension of the mask must be the **same size** to the image.*
+
+### Computing Histograms
