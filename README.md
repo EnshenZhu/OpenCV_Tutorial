@@ -242,9 +242,12 @@ image). It will be in a graph or a plot that gives a high-level intuition of the
 
 #### Colors
 
-1. ```histogram_colors.py``` Compute the histogram for the color image. <img src="./histogram_results/colors_histogram.png">
+1. ```histogram_colors.py``` Compute the histogram for the color
+   image.
+   <img src="./histogram_results/colors_histogram.png">
 2. ```histogram_colors2.py``` Create a circle mask and compute the histogram for the color image only on the mask
-   area. <img src="./histogram_results/colors_histogram_with_mask.png">
+   area.
+   <img src="./histogram_results/colors_histogram_with_mask.png">
 
 ### Thresholding
 
