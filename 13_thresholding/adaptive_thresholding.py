@@ -1,22 +1,21 @@
 import cv2 as cv
 
 img = cv.imread('../Photos/fengshen.jpg')
-cv.imshow('Fengshen', img)
+# cv.imshow('Fengshen', img)
 
 # Convert the BGR image to grayscale
 gray = cv.cvtColor(img, code=cv.COLOR_BGR2GRAY)
 cv.imshow('Gray', gray)
 
 """Adaptive Thresholding"""
-threshold, thresh = cv.threshold(gray, thresh=150, maxval=255, type=cv.THRESH_BINARY)
-# THRESH_BINARY --> equal or below 150 -> 0 | above 150 -> 255
-# returned threshold -> same threshold value in the method (e.g., 150 in this case)
-# returned thresh --> the threshold binary image
-cv.imshow('Simple Thresholded', thresh)
+adaptive_thresh = cv.adaptiveThreshold(gray, maxValue=255, adaptiveMethod=cv.ADAPTIVE_THRESH_MEAN_C,
+                                       thresholdType=cv.THRESH_BINARY_INV, blockSize=11, C=9)
+# blockSize --> the kernel size that the OpenCV need to use compute the mean and find the threshold value.
+# C --> an integer that is subtracted from the mean, allowing us to fine tune of the threshold.
+cv.imshow('Adaptive Thresholding', adaptive_thresh)
 
-# create an inverse thresholding
-threshold, thresh_inv = cv.threshold(gray, thresh=150, maxval=255, type=cv.THRESH_BINARY_INV)
-# THRESH_BINARY_INV --> equal or below 150 -> 255 | above 150 -> 0
-cv.imshow('Simple Thresholded Inversed', thresh_inv)
+adaptive_thresh_gaussian = cv.adaptiveThreshold(gray, maxValue=255, adaptiveMethod=cv.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                                thresholdType=cv.THRESH_BINARY_INV, blockSize=11, C=9)
+cv.imshow('Adaptive Thresholding Gaussian', adaptive_thresh_gaussian)
 
 cv.waitKey(0)

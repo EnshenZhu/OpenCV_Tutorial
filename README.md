@@ -227,7 +227,8 @@ and remove all the rest in the image.*)
 
 ### Computing Histograms
 
-We use the image ```fengshen.jpg``` as the source image. <Img src="Photos/fengshen.jpg">
+We use the image ```fengshen.jpg``` as the source image.  
+<Img src="Photos/fengshen.jpg">
 
 Histogram allows you to visualize the distribution of pixel intensities in an image (whether it is a color or grayscale
 image). It will be in a graph or a plot that gives a high-level intuition of the pixel distribution in the image.
@@ -235,18 +236,22 @@ image). It will be in a graph or a plot that gives a high-level intuition of the
 #### Grayscale
 
 1. ```histogram_grayscale.py``` Compute the histogram for grayscale image. *(The histogram shows that there are around
-   3500 pixels has the intensity of 20 to 30)* <img src="./histogram_results/grayscale_histogram.png">
+   3500 pixels has the intensity of 20 to 30)*
+   <img src="./histogram_results/grayscale_histogram.png">
 2. ```histogram_grayscale2.py``` Change to another source image.
 3. ```histogram_grayscale3.py``` Create a circle mask and compute the histogram for grayscale image only on the mask
-   area. <img src="./histogram_results/grayscale_histogram_with_mask.png">
+   area.  
+   <img src="./histogram_results/grayscale_histogram_with_mask.png">
 
 #### Colors
 
-1. ```histogram_colors.py``` Compute the histogram for color
-   images. <img src="./histogram_results/colors_histogram.png">
+1. ```histogram_colors.py``` Compute the histogram for the color
+   image.  
+   <img src="./histogram_results/colors_histogram.png">
 
-2. ```histogram_colors2.py``` Create a circle mask and compute the histogram for color images only on the mask
-   area. <img src="./histogram_results/colors_histogram_with_mask.png">
+2. ```histogram_colors2.py``` Create a circle mask and compute the histogram for the color image only on the mask
+   area.  
+   <img src="./histogram_results/colors_histogram_with_mask.png">
 
 ### Thresholding
 
@@ -260,7 +265,7 @@ and compare each pixel of the image to this threshold of value.
 
 #### Simple Thresholding
 
-Manually set a threshold value.
+```simple_thresholding.py``` Manually set a threshold value.
 
 * Set the pixel intensity to zero if the initial pixel intensity is equal or below the
   threshold value.
@@ -268,4 +273,24 @@ Manually set a threshold value.
 
 #### Adaptive Thresholding
 
-Let the computer decide the thresholding value by itself, instead of manually setting the threshold value.
+```adaptive_thresholding.py``` Let the computer decide the thresholding value by itself, instead of manually setting the
+threshold value. Then use the threshold value it finds to binarize the image.
+
+### Edge Detection
+
+We are going to talk about the **gradient** and **edge detections** in the OpenCV.
+
+#### Laplacian Method
+
+* ```laplacian.py```
+
+#### Sobel Method
+
+* ```sobel.py```
+* Sobel computes the gradient in the x and y directions
+
+*RECALL: **Canny** is a multi-stage process. One of the stages is to use the Sobel method to compute the gradient.*
+
+## Faces
+
+### Face Detection
