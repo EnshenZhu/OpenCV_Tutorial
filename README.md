@@ -294,3 +294,31 @@ We are going to talk about the **gradient** and **edge detections** in the OpenC
 ## Faces
 
 ### Face Detection
+
+We are going to discuss how to detect faces in OpenCV by using the haar cascades.
+
+Face detection is just merely **detecting the presence of a face**, while the face recognition involves **identifying
+whose face it is.**
+
+* The face detection is performed using classifiers. A classifier is essentially an algorithm that decides whether a
+  given
+  image is positive or negative *(whether the face is present or not)*
+
+* The face classification needs to be trained on 1000s and 10,000 of images with and without faces.
+
+In face detection with the OpenCV, the two main classifiers that exist today are haarcascades and local binary patterns.
+
+Check https://github.com/opencv/opencv/tree/master/data/haarcascades about the OpenCV harrcascades. We are going to use
+the ```haarcascade_frontalface_default.xml``` to do the facial detection. *(However,
+the ```haarcascade_frontalface_default.xml``` is very sensitive to the noises in the image. There might be some
+mis-labelling of faces within the image)*
+
+***RECALL**: The image of the human face must be transferred to the grayscale. Color should not be present in the image.
+These hard cascades essentially look at an object in an image and use the edges and try to determine whether it is a
+face or not.*
+
+Hard-cascading may be a popular way of detecting faces, but it is not the most advanced method.
+
+### Face Recognition
+
+Identify who is who in the photo. We are going to use the OpenCV build-in recognizer by inputting 90 labeled photos
