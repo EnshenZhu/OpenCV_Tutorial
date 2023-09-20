@@ -9,7 +9,7 @@ b, g, r = cv.split(img)  # split the image into blue,green and red
 
 # The following displays show the pixel distribution intensities(corresponded color channels) in grayscale
 # The light place in the image shows more concentration of the pixel values.
-# The dark places shows little (or even no) pixels in that region
+# The dark places show little (or even no) pixels in that region
 cv.imshow('Blue', b)
 cv.imshow('Green', g)
 cv.imshow('Red', r)

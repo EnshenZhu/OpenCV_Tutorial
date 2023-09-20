@@ -12,7 +12,8 @@ def translate(img, x, y):
     x,y are the number of pixels you are going to shift along the x-axis and y-axis
     """
     transMat = np.float32([[1, 0, x], [0, 1, y]])
-    dimensions = (img.shape[1], img.shape[1])
+    dimensions = (img.shape[1], img.shape[0])
+    print((img.shape[1], img.shape[0]))
     return cv.warpAffine(img, transMat, dimensions)
 
 

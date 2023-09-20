@@ -9,7 +9,7 @@ cv.imshow('Gray Photo', gray)
 
 haar_cascade = cv.CascadeClassifier('../haar_face.xml')
 
-faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=3)
+faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=2)
 # minNeighbors --> the number of neighbor rectangles should have to be called a face
 # This function will return the rectangular coordinates of face as a list
 
