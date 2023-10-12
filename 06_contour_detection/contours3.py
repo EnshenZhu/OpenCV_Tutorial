@@ -31,7 +31,7 @@ print(f'{len(contours)} contour(s) found')
 
 """Draw the contour on the blank image"""
 cv.drawContours(blank, contours, contourIdx=-1, color=(0, 0, 255), thickness=1)
-# contourIdx --> how many contour we want in the image, (specify -1 to draw all contours)
+# contourIdx --> how many contours we want in the image, (specify -1 to draw all contours)
 
 cv.imshow("Contour Drawn", blank)
 

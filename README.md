@@ -9,23 +9,23 @@ https://youtu.be/oXlwWbU8l2o?si=53PRghV4ch3mmd2g
 
 ### Basic
 
-1. Reading Images and Video
-2. Image Transformations
-3. Drawing Shapes
-4. Putting Text
+1. [Reading Images and Video](#reading-images--video)
+2. [Image Transformations](#image-transformations)
+3. [Drawing Shapes](#drawing-shapes--putting-text)
+4. [Putting Text](#drawing-shapes--putting-text)
 
 ### Advanced
 
-1. Color Spaces
-2. BITWISE operations
-3. Masking
-4. Histogram Computation
-5. Edge Detection and Thresholding
+1. [Color Spaces](#color-space)
+2. [BITWISE operations](#bitwise-operations)
+3. [Masking](#masking)
+4. [Histogram Computation](#computing-histograms)
+5. [Edge Detection and Thresholding](#edge-detection)
 
 ### Faces:
 
-1. Face Detection
-2. Face Recognition
+1. [Face Detection](#face-detection)
+2. [Face Recognition](#face-recognition)
 3. Deep Computer Vision (Classify the Simpsons)
 
 ## What is Computer Vision
